@@ -4,15 +4,16 @@
 [![Architecture Governance](https://img.shields.io/badge/Methodology-SAP%20ISA--M%20%7C%20S%2F4HANA%20Clean%20Core%20%7C%20Zero--Trust-success?style=flat-square)](https://github.com/neurozeljko)
 [![Engineering Rigor](https://img.shields.io/badge/QA%20%26%20GitOps-Groovy%203%20%7C%20Spock%20TDD%20%7C%20Project%20Piper%20CI%2FCD-6f42c1?style=flat-square)](https://github.com/neurozeljko)
 
-Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This catalog contains **32 production-grade architectural blueprints** built on **SAP Business Technology Platform (SAP BTP)** and **SAP Integration Suite**, complete with exported **BPMN2 (`.iflw`) packages**, **Spock Framework TDD unit test suites** (with mocked `com.sap.gateway.ip.core.customdev.util.Message` contracts), **SAP Project Piper GitOps pipelines**, and **Architectural Decision Records (ADRs)**.
+Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This catalog contains **33 production-grade architectural blueprints** built on **SAP Business Technology Platform (SAP BTP)** and **SAP Integration Suite**, complete with exported **BPMN2 (`.iflw`) packages**, **Spock Framework TDD unit test suites** (with mocked `com.sap.gateway.ip.core.customdev.util.Message` contracts), **SAP Project Piper GitOps pipelines**, and **Architectural Decision Records (ADRs)**.
 
 ---
 
-## 🏛️ Executive Architecture Matrix (32 Reference Blueprints)
+## 🏛️ Executive Architecture Matrix (33 Reference Blueprints)
 
-### I. S/4HANA 2025 Master Data Governance (MDG / MDI) & EU Regulatory Mesh (Projects 31–32)
+### I. S/4HANA 2025 Master Data Governance (MDG / MDI) & EU Regulatory Mesh (Projects 31–33)
 | # | Reference Repository | Architectural Pattern & Core Stack | Target ERP / Domain |
 | :-: | :--- | :--- | :--- |
+| **33** | [**sap-cpi-mdg-financial-master-green-ledger-mesh**](https://github.com/neurozeljko/sap-cpi-mdg-financial-master-green-ledger-mesh) | MDG-F Financial Master Governance, `YCOA` Range Enforcement & SAP Green Ledger (EU CSRD / ESRS E1) | S/4HANA 2025 FPS01 (`ACDOCA` / Ledger `0L`) |
 | **32** | [**sap-cpi-mdi-digital-product-passport-circular-bom**](https://github.com/neurozeljko/sap-cpi-mdi-digital-product-passport-circular-bom) | EU ESPR 2026/2027 Digital Product Passport, W3C JSON-LD VC, GS1 GTIN-14 Mod-10 & REACH SVHC Gate | S/4HANA 2025 FPS01 (`API_PRODUCT_SRV`) |
 | **31** | [**sap-cpi-mdg-business-partner-golden-record-mesh**](https://github.com/neurozeljko/sap-cpi-mdg-business-partner-golden-record-mesh) | Deterministic SHA-256 Golden Record Deduplication, ISO 13616 Mod-97 IBAN Check & OFAC/EU Sanctions Gate | S/4HANA 2025 FPS01 (`API_BUSINESS_PARTNER`) |
 
@@ -63,6 +64,6 @@ Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This
 ## 🛠️ Core Technical Competencies
 
 - **SAP BTP Integration Suite:** Cloud Integration (CPI), API Management (APIM), Trading Partner Management (TPM), Integration Assessment (ISA-M), SAP Advanced Event Mesh (AEM), Edge Integration Cell (EIC), SAP Graph, Open Connectors.
-- **Master Data Governance & Regulatory Domain Models:** SAP MDG / Master Data Integration (MDI), SAP One Domain Model (ODM), S/4HANA 2025 OData V4 (`API_BUSINESS_PARTNER`, `API_PRODUCT_SRV`), EU ESPR Digital Product Passports (W3C JSON-LD VC), GS1 Digital Link & GTIN-14 Mod-10, EU REACH Article 33 SVHC Gating, SHA-256 Golden Record Fingerprinting, ISO 13616 Mod-97 IBAN Verification.
+- **Master Data Governance & Regulatory Domain Models:** SAP MDG / MDG-F / Master Data Integration (MDI), SAP One Domain Model (ODM), S/4HANA 2025 OData V4 (`API_BUSINESS_PARTNER`, `API_PRODUCT_SRV`, `A_GLAccountInChartOfAccounts`), SAP Green Ledger (EU CSRD / ESRS E1), EU ESPR Digital Product Passports (W3C JSON-LD VC), GS1 Digital Link & GTIN-14 Mod-10, EU REACH Article 33 SVHC Gating, SHA-256 Golden Record Fingerprinting, ISO 13616 Mod-97 IBAN Verification.
 - **Development & Automated QA:** Groovy 3 (`java.io.Reader` Streaming), XSLT 3.0, Apache Camel Expression Language, Spock Framework BDD/TDD (`Message` Interface Mocking), Gradle, SonarQube, GitHub Actions, SAP Project Piper (`cpiArtifactDeploy`).
 - **Protocols & Security:** OData V4/V2, GraphQL, REST/OpenAPI 3.1, SOAP XI 3.0/WS-Security, AS2, OASIS AS4 (Peppol), SFTP, AMQP/JMS, Kafka, IDoc/RFC, Cloud Connector Principal Propagation, mTLS X.509, OAuth 2.0 (RFC 8693), OpenPGP, NIST Post-Quantum Cryptography (`ML-KEM-768` / `ML-DSA-65`).
