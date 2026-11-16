@@ -4,13 +4,18 @@
 [![Architecture Governance](https://img.shields.io/badge/Methodology-SAP%20ISA--M%20%7C%20S%2F4HANA%20Clean%20Core%20%7C%20Zero--Trust-success?style=flat-square)](https://github.com/neurozeljko)
 [![Engineering Rigor](https://img.shields.io/badge/QA%20%26%20GitOps-Groovy%203%20%7C%20Spock%20TDD%20%7C%20Project%20Piper%20CI%2FCD-6f42c1?style=flat-square)](https://github.com/neurozeljko)
 
-Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This catalog contains **30 production-grade architectural blueprints** built on **SAP Business Technology Platform (SAP BTP)** and **SAP Integration Suite**, complete with exported **BPMN2 (`.iflw`) packages**, **Spock Framework TDD unit test suites** (with mocked `com.sap.gateway.ip.core.customdev.util.Message` contracts), **SAP Project Piper GitOps pipelines**, and **Architectural Decision Records (ADRs)**.
+Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This catalog contains **31 production-grade architectural blueprints** built on **SAP Business Technology Platform (SAP BTP)** and **SAP Integration Suite**, complete with exported **BPMN2 (`.iflw`) packages**, **Spock Framework TDD unit test suites** (with mocked `com.sap.gateway.ip.core.customdev.util.Message` contracts), **SAP Project Piper GitOps pipelines**, and **Architectural Decision Records (ADRs)**.
 
 ---
 
-## 🏛️ Executive Architecture Matrix (30 Reference Blueprints)
+## 🏛️ Executive Architecture Matrix (31 Reference Blueprints)
 
-### I. Frontier Architecture, High-Availability DR & Post-Quantum Security (Projects 26–30)
+### I. S/4HANA 2025 Master Data Governance (MDG / MDI) & Compliance Mesh (Project 31)
+| # | Reference Repository | Architectural Pattern & Core Stack | Target ERP / Domain |
+| :-: | :--- | :--- | :--- |
+| **31** | [**sap-cpi-mdg-business-partner-golden-record-mesh**](https://github.com/neurozeljko/sap-cpi-mdg-business-partner-golden-record-mesh) | Deterministic SHA-256 Golden Record Deduplication, ISO 13616 Mod-97 IBAN Check & OFAC/EU Sanctions Gate | S/4HANA 2025 FPS01 (`API_BUSINESS_PARTNER`) |
+
+### II. Frontier Architecture, High-Availability DR & Post-Quantum Security (Projects 26–30)
 | # | Reference Repository | Architectural Pattern & Core Stack | Target ERP / Domain |
 | :-: | :--- | :--- | :--- |
 | **30** | [**sap-ai-core-autonomous-iflow-synthesis-swarm**](https://github.com/neurozeljko/sap-ai-core-autonomous-iflow-synthesis-swarm) | Multi-Agent Swarm on SAP AI Core, CPI Design-Time REST APIs, ISA-M Governance & Zero-Touch Piper CI/CD | SAP Ariba & S/4HANA Procurement |
@@ -19,7 +24,7 @@ Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This
 | **27** | [**sap-btp-s4hana-dr-active-passive-failover-mesh**](https://github.com/neurozeljko/sap-btp-s4hana-dr-active-passive-failover-mesh) | Multi-Region Active-Passive DR (`EU10 -> US10`), Anycast GSLB, AEM DMR Bridge & Global Redis Idempotency | Aerospace Satellite Telemetry & EAM |
 | **26** | [**sap-cpi-pharma-coldchain-tdd-cicd**](https://github.com/neurozeljko/sap-cpi-pharma-coldchain-tdd-cicd) | Spock Framework TDD, `Message` Interface Mocking, GitHub Actions CI & SAP Project Piper (`cpiArtifactDeploy`) | Pharma GxP Cold-Chain (EU Annex 11) |
 
-### II. API Management, Multi-iPaaS Federation & Event-Driven Mesh (Projects 15–25)
+### III. API Management, Multi-iPaaS Federation & Event-Driven Mesh (Projects 15–25)
 | # | Reference Repository | Architectural Pattern & Core Stack | Target ERP / Domain |
 | :-: | :--- | :--- | :--- |
 | **25** | [**sap-apim-open-finance-edge-gateway**](https://github.com/neurozeljko/sap-apim-open-finance-edge-gateway) | SAP API Management (APIM) Spike Arrest, Quota Enforcement & PSD3 Open Finance Monetization | Open Banking & Credit Scoring |
@@ -34,7 +39,7 @@ Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This
 | **16** | [**sap-cpi-v2x-fleet-predictive-maintenance**](https://github.com/neurozeljko/sap-cpi-v2x-fleet-predictive-maintenance) | Edge Integration Cell Micro-Batching, SAP AI Core Anomaly Scoring & CNCF CloudEvents 1.0 | Autonomous V2X Fleet EAM |
 | **15** | [**sap-cpi-defense-aerospace-soap-aif-gateway**](https://github.com/neurozeljko/sap-cpi-defense-aerospace-soap-aif-gateway) | W3C WS-Security SOAP XI 3.0, mTLS X.509, Anti-Replay Engine & SAP AIF Fault Injection | Aerospace & Defense B2B |
 
-### III. S/4HANA Clean Core, B2B/B2G EDI & Legacy PI/PO Modernization (Projects 1–14)
+### IV. S/4HANA Clean Core, B2B/B2G EDI & Legacy PI/PO Modernization (Projects 1–14)
 | # | Reference Repository | Architectural Pattern & Core Stack | Target ERP / Domain |
 | :-: | :--- | :--- | :--- |
 | **14** | [**sap-cpi-cleancore-cap-mesh-gitops**](https://github.com/neurozeljko/sap-cpi-cleancore-cap-mesh-gitops) | Side-by-Side Node.js CAP on BTP, OAuth 2.0 RFC 8693 Token Exchange & Principal Propagation | S/4HANA Clean Core Extensions |
@@ -56,6 +61,7 @@ Welcome to my **Open-Source SAP Enterprise Integration Reference Library**. This
 
 ## 🛠️ Core Technical Competencies
 
-* **SAP BTP Integration Suite:** Cloud Integration (CPI), API Management (APIM), Trading Partner Management (TPM), Integration Assessment (ISA-M), SAP Advanced Event Mesh (AEM), Edge Integration Cell (EIC), SAP Graph, Open Connectors.
-* **Development & Automated QA:** Groovy 3, XSLT 3.0, Apache Camel Expression Language, Spock Framework BDD/TDD (`Message` Interface Mocking), Gradle, SonarQube, GitHub Actions, SAP Project Piper (`cpiArtifactDeploy`).
-* **Protocols & Security:** OData V4/V2, GraphQL, REST/OpenAPI 3.1, SOAP XI 3.0/WS-Security, AS2, OASIS AS4 (Peppol), SFTP, AMQP/JMS, Kafka, IDoc/RFC, Cloud Connector Principal Propagation, mTLS X.509, OAuth 2.0 (RFC 8693), OpenPGP, NIST Post-Quantum Cryptography (`ML-KEM-768` / `ML-DSA-65`).
+- **SAP BTP Integration Suite:** Cloud Integration (CPI), API Management (APIM), Trading Partner Management (TPM), Integration Assessment (ISA-M), SAP Advanced Event Mesh (AEM), Edge Integration Cell (EIC), SAP Graph, Open Connectors.
+- **Master Data Governance & Domain Models:** SAP MDG / Master Data Integration (MDI), SAP One Domain Model (ODM), S/4HANA 2025 OData V4 (`API_BUSINESS_PARTNER`), SHA-256 Golden Record Fingerprinting, ISO 13616 Mod-97 IBAN Verification & OFAC/EU Sanctions Screening.
+- **Development & Automated QA:** Groovy 3, XSLT 3.0, Apache Camel Expression Language, Spock Framework BDD/TDD (`Message` Interface Mocking), Gradle, SonarQube, GitHub Actions, SAP Project Piper (`cpiArtifactDeploy`).
+- **Protocols & Security:** OData V4/V2, GraphQL, REST/OpenAPI 3.1, SOAP XI 3.0/WS-Security, AS2, OASIS AS4 (Peppol), SFTP, AMQP/JMS, Kafka, IDoc/RFC, Cloud Connector Principal Propagation, mTLS X.509, OAuth 2.0 (RFC 8693), OpenPGP, NIST Post-Quantum Cryptography (`ML-KEM-768` / `ML-DSA-65`).
